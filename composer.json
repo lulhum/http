@@ -24,7 +24,7 @@
             "homepage": "https://cboden.dev/",
             "email": "cboden@gmail.com"
         }
-    ],,
+    ],
     "replace": {
         "react/http": "1.10.0"
     },
