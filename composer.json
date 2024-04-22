@@ -1,5 +1,5 @@
 {
-    "name": "react/http",
+    "name": "lulhum/http",
     "description": "Event-driven, streaming HTTP client and server implementation for ReactPHP",
     "keywords": ["HTTP client", "HTTP server", "HTTP", "HTTPS", "event-driven", "streaming", "client", "server", "PSR-7", "async", "ReactPHP"],
     "license": "MIT",
@@ -24,7 +24,10 @@
             "homepage": "https://cboden.dev/",
             "email": "cboden@gmail.com"
         }
-    ],
+    ],,
+    "replace": {
+        "react/http": "1.10.0"
+    },
     "require": {
         "php": ">=5.3.0",
         "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
