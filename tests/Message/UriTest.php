@@ -120,6 +120,9 @@ class UriTest extends TestCase
             ),
             array(
                 'http://user%20name:pass%20word@localhost/path%20name?query%20name#frag%20ment'
+            ),
+            array(
+                'http://docker_container/'
             )
         );
     }
@@ -335,6 +338,16 @@ class UriTest extends TestCase
         $new = $uri->withHost('example.com');
         $this->assertNotSame($uri, $new);
         $this->assertEquals('example.com', $new->getHost());
+        $this->assertEquals('localhost', $uri->getHost());
+    }
+
+    public function testWithHostReturnsNewInstanceWhenHostIsChangedWithUnderscore()
+    {
+        $uri = new Uri('http://localhost');
+
+        $new = $uri->withHost('docker_container');
+        $this->assertNotSame($uri, $new);
+        $this->assertEquals('docker_container', $new->getHost());
         $this->assertEquals('localhost', $uri->getHost());
     }
 
