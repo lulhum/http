@@ -32,7 +32,7 @@ class StreamingServerTest extends TestCase
     }
 
 
-    private function mockConnection(array $additionalMethods = null)
+    private function mockConnection(array $additionalMethods = array())
     {
         $connection = $this->getMockBuilder('React\Socket\Connection')
             ->disableOriginalConstructor()
@@ -49,7 +49,7 @@ class StreamingServerTest extends TestCase
                     'getLocalAddress',
                     'pipe'
                 ),
-                (is_array($additionalMethods) ? $additionalMethods : array())
+                $additionalMethods
             ))
             ->getMock();
 

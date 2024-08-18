@@ -28,7 +28,9 @@ class SenderTest extends TestCase
 
     public function testCreateFromLoop()
     {
-        $sender = Sender::createFromLoop($this->loop, null);
+        $connector = $this->getMockBuilder('React\Socket\ConnectorInterface')->getMock();
+
+        $sender = Sender::createFromLoop($this->loop, $connector);
 
         $this->assertInstanceOf('React\Http\Io\Sender', $sender);
     }
