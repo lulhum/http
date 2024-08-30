@@ -366,7 +366,7 @@ class FunctionalBrowserTest extends TestCase
         $this->setExpectedException(
             'OverflowException',
             'Response body size of 5 bytes exceeds maximum of 4 bytes',
-            defined('SOCKET_EMSGSIZE') ? SOCKET_EMSGSIZE : 0
+            defined('SOCKET_EMSGSIZE') ? SOCKET_EMSGSIZE : 90
         );
         \React\Async\await($promise);
     }
@@ -378,7 +378,7 @@ class FunctionalBrowserTest extends TestCase
         $this->setExpectedException(
             'OverflowException',
             'Response body size exceeds maximum of 4 bytes',
-            defined('SOCKET_EMSGSIZE') ? SOCKET_EMSGSIZE : 0
+            defined('SOCKET_EMSGSIZE') ? SOCKET_EMSGSIZE : 90
         );
         \React\Async\await($promise);
     }
